@@ -1,0 +1,49 @@
+{
+    "name": "lagdo/yii-facades",
+    "type": "library",
+    "description": "Call Yii services using facades.",
+    "authors": [
+        {"name": "Thierry Feuzeu"}
+    ],
+    "homepage": "https://github.com/lagdo/yii-facades",
+    "license": "BSD-3-Clause",
+    "keywords": ["PHP", "Framework", "Yii", "Services", "Facades"],
+    "support": {
+        "issues": "https://github.com/lagdo/yii-facades/issues",
+        "source": "https://github.com/lagdo/yii-facades"
+    },
+    "require": {
+        "lagdo/facades": "^1.0",
+        "yiisoft/yii2": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "php-coveralls/php-coveralls": "^2.4",
+        "phpunit/phpcov": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lagdo\\Yii\\Facades\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lagdo\\Yii\\Facades\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@clearCache",
+            "@putenv XDEBUG_MODE=coverage",
+            "vendor/bin/phpunit"
+        ],
+        "clearCache": "rm -rf cache/*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": false
+        }
+    }
+}
